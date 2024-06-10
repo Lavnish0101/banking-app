@@ -23,6 +23,7 @@ import CustomInput from "./CustomInput";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { signIn, signUp } from "@/lib/actions/user.actions";
+import PlaidLink from "./PlaidLink";
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -113,7 +114,7 @@ const AuthForm = ({ type }: { type: string }) => {
         </div>
       </header>
       {user ? (
-        <div className="flex flex-col gap-4">{/* PLaidLink */}</div>
+        <div className="flex flex-col gap-4"><PlaidLink user={user} variant="primary"/></div>
       ) : (
         <>
           <Form {...form}>
